@@ -1,4 +1,5 @@
-from zipfile import ZipFile
+from subprocess import call
 
-with ZipFile('tibero/Tibero_6_FS06_linux_64_20170303.zip.001') as myzip:
-    myzip.extractall()
+url = "https://github.com/miglesiassarria/tibero/tree/master/tibero"
+for i in range(5):
+    call("curl -s --retry 3 -m 60 -o /$part -L $ur{}".format(i+1))
