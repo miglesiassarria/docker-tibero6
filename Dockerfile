@@ -18,4 +18,6 @@ RUN chmod +x /solutions/initial.py && \
     chmod +x /solutions/entry.sh && \
     chmod 777 -R /solutions/scripts
 
+COPY supervisord.conf /etc/supervisord.conf
+
 CMD ["/usr/bin/supervisord"]
