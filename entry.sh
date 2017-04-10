@@ -1,5 +1,5 @@
 #!/bin/bash
 
-python initial.py
+python /solutions/initial.py
 
 /bin/bash
