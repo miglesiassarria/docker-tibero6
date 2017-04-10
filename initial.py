@@ -7,7 +7,7 @@ url = "https://github.com/miglesiassarria/tibero/raw/master/installation/Tib6.bi
 ruta_base = "/tibero"
 destino = ruta_base + "/Tib6.bin.00"
 existe = ruta_base + "/tibero6"
-instalador = ruta_base + "/instalador.bin"
+instalador = ruta_base + "/installer.bin"
 
 if os.path.exists(existe):
     print("Tibero ya se encuntra instalado")
@@ -18,7 +18,7 @@ else:
         urllib.urlretrieve(url + str(i+1), filename=destino + str(i+1))
 
     os.system("cat " + destino + "* > " + ruta_base + "/installer.bin")
-    os.system("chmod +x " + ruta_base + "/instalador.bin")
+    os.system("chmod +x " + ruta_base + "/installer.bin")
     os.system(instalador + " -f /solutions/installvariables.properties -i silent")
     os.system("chmod +x /tibero/tibero6/client/bin/install.sh")
     print("Instalacion de TIBERO 6 completada")
