@@ -43,4 +43,4 @@ else:
     os.system("cp /solutions/scripts/*.py /tibero/scripts")
     os.system("rm " + ruta_base + "/*bin*")
 
-    print("INSTALACION FINALIZADA !!DISFRUTALA!!")
+    print("INSTALACION FINALIZADA !!!DISFRUTALA!!!")
