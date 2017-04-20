@@ -24,7 +24,7 @@ sysctl -w kernel.sem="10000 32000 10000 10000"
 ***CREAR UNA BBDD:***
 Tras lanzar el docker-compose, tendremos tibero 6 instalado, pero no habrá ninguna base de datos creada.
 En el volumen que hemos montado (ver el docker-compose) nos aparecera el script newdb.sh el cual habrá que ejecutar
-con el nombre del contenedor como parametro. Ej
+con el nombre del contenedor como parametro. Ej:
  - ./newdb.sh tibero
 
 A parir de este punto el sistema nos irá preguntando la informacion que requiere para crear la base de datos.
