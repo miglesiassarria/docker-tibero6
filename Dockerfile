@@ -11,14 +11,12 @@ ENV TB_HOME=/tibero/tibero6 \
     LD_LIBRARY_PATH=:/tibero/tibero6/lib:/tibero/tibero6/client/lib \
     PATH=/usr/xpg4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/tibero/tibero6/bin:/tibero/tibero6/client/bin
 
-ADD initial.py /solutions/
 ADD installvariables.properties /solutions/
 ADD InstallScript.iap_xml /solutions/
-ADD entry.sh /solutions/
+ADD entry.py /solutions/
 ADD scripts/* /solutions/scripts/
 
-RUN chmod +x /solutions/initial.py && \
-    chmod +x /solutions/entry.sh && \
+RUN chmod +x /solutions/entry.py && \
     chmod 777 -R /solutions/scripts
 
 COPY supervisord.conf /etc/supervisord.conf

@@ -2,6 +2,13 @@
 
 import urllib
 import os
+import logging
+
+logging.basicConfig(filename='/dev/stdout', level=logging.DEBUG, format="%(asctime)-15s %(levelname)-8s %(message)s")
+
+
+def logger_info(message):
+    logging.info('\033[1;32m' + message + '\033[0m')
 
 url = "https://github.com/miglesiassarria/tibero/raw/master/installation/Tib6.bin.00"
 ruta_base = "tibero"
@@ -12,21 +19,19 @@ tbhome = os.environ.get("TB_HOME")
 
 
 if os.path.exists(existe):
-    print("Tibero ya se encuntra instalado")
+    logger_info("TIBERO YA SE ENCUENTRA INSTALADO")
     bd_list = os.listdir(tbhome)
 
     for name in bd_list:
         if name[(len(name)-5):len(name)] == ".conf":
-            id = name[0:len(name)-5]
-            os.environ["TB_SID"] = id
+            database_id = name[0:len(name)-5]
+            os.environ["TB_SID"] = database_id
             os.system("tbdown clean")
             os.system("tbboot")
-            # print(id)
-            # print(name[(len(name)-4):len(name)])
 
 
 else:
-    print("INSTALANDO TIBERO")
+    logger_info("INSTALANDO TIBERO")
     for i in range(5):
         urllib.urlretrieve(url + str(i+1), filename=destino + str(i+1))
 
@@ -38,9 +43,12 @@ else:
     os.system("mkdir " + ruta_base + "/dbrepo")
     os.system("touch " + ruta_base + "/dbrepo/dbs.ini")
 
-    print("Preparando scripts de base de datos")
+    logger_info("Preparando scripts de base de datos")
     os.system("cp /solutions/scripts/*.sh /tibero/")
     os.system("cp /solutions/scripts/*.py /tibero/scripts")
     os.system("rm " + ruta_base + "/*bin*")
 
-    print("INSTALACION FINALIZADA !!!DISFRUTALA!!|!")
+    logger_info("INSTALACION FINALIZADA !!!DISFRUTALA!!|!")
+
+
+os.system("/bin/bash")
