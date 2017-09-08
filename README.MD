@@ -3,7 +3,7 @@
 - Es necesario tener un volumen montado que apuntará a /tibero yy donde se realizará toda la instalación.
  En este directorio hemos de meter nuestra liciencia.
 - En caso de error, es necesario ejecutar en el anfitrión el siguiente comando para arreglar el problema del semaforo:
-sysctl -w kernel.sem="10000 32000 10000 10000"
+sysctl -w kernel.sem="10000 32000 10000 10000".
 
 
 **DOCKER-COMPOSE**
