@@ -10,7 +10,7 @@ logging.basicConfig(filename='/dev/stdout', level=logging.DEBUG, format="%(ascti
 def logger_info(message):
     logging.info('\033[1;32m' + message + '\033[0m')
 
-url = "https://github.com/miglesiassarria/tibero/raw/master/installation/Tib6.bin.00"
+url = "https://github.com/miglesiassarria/docker-tibero6/raw/master/installation/Tib6.bin.00"
 ruta_base = "tibero"
 destino = ruta_base + "/Tib6.bin.00"
 existe = ruta_base + "/tibero6"
