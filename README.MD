@@ -1,4 +1,4 @@
-<img src="https://travis-ci.org/miglesiassarria/tibero6.svg?branch=master">
+<img src="https://travis-ci.org/miglesiassarria/docker-tibero6.svg?branch=master">
 
 **REQUERIMIENTOS DEL CONTENEDOR:**
 
