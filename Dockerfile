@@ -2,7 +2,7 @@ FROM nfqsolutions/centos:7
 
 MAINTAINER solutions@nfq.com
 
-# Instalación de paquetes
+# Instalacion de paquetes
 RUN yum install -y java-1.7.0-openjdk libaio.x86_64 && \
     mkdir /solutions/scripts
 
